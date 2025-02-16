@@ -34,9 +34,9 @@ http://localhost:8080
 
 🎨 3. Levantar el frontend (Next.js)
 
-📂 Ubicarse en el directorio del frontend:
+📂 En otra terminal, ubicarse en el directorio del frontend desde la raiz del proyecto:
 
-cd ../front-end
+cd front-end
 
 📦 Instalar dependencias:
 

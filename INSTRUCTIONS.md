@@ -4,7 +4,13 @@ Instrucciones para levantar el proyecto localmente
 
 Antes de iniciar, asegúrate de tener instalado en tu sistema:
 
-Java 17+   Maven 3+   Node.js 18+   Git
+Java 17+
+
+Maven 3+
+
+Node.js 18+
+
+Git
 
 🚀 1. Clonar el repositorio
 

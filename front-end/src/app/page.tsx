@@ -6,24 +6,29 @@ import ButtonDelete from "@/app/components/buttons/ButtonDelete";
 import ButtonUpdate from "@/app/components/buttons/ButtonUpdate";
 
 export default async function Home() {
-  const response = await fetch('http://localhost:8080/api/usuarios');
-  const data = await response.json();
-  const tableData = data.map((item: Usuario) => {
-    return (
-      <div key={item.id} className={styles.table_data}>
-        <h4>{item.nombres}</h4>
-        <h4>{item.apellidos}</h4>
-        <h4>{item.rut}-{item.dv}</h4>
-        <h4>{item.fechaNacimiento}</h4>
-        <h4>{item.correoElectronico}</h4>
-        <h4>{item.contrasena}</h4>
-        <div className={styles.options}>
-          <ButtonDelete data={item} />
-          <ButtonUpdate data={item} />
+  let tableData = [];
+  try {
+    const response = await fetch('http://localhost:8080/api/usuarios');
+    const data = await response.json();
+    tableData = data.map((item: Usuario) => {
+      return (
+        <div key={item.id} className={styles.table_data}>
+          <h4>{item.nombres}</h4>
+          <h4>{item.apellidos}</h4>
+          <h4>{item.rut}-{item.dv}</h4>
+          <h4>{item.fechaNacimiento}</h4>
+          <h4>{item.correoElectronico}</h4>
+          <h4>{item.contrasena}</h4>
+          <div className={styles.options}>
+            <ButtonDelete data={item} />
+            <ButtonUpdate data={item} />
+          </div>
         </div>
-      </div>
-    );
-  });
+      );
+    });
+  } catch(error) {
+    console.error(error);
+  }
   return (
     <main className='page'>
       <div className={styles.section_info}>

@@ -5,7 +5,6 @@ import { formatDate } from '@/app/lib/utilities';
 function InputDate({ value, setValue, error, valid, setValid, name }) {
 
   const handleInput = (newValue) => {
-    console.log(newValue);
     const regex = /^\d{4}-\d{2}-\d{2}$/;
     setValid(regex.test(newValue));
     const newDate = new Date(newValue);
